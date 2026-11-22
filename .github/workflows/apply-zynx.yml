@@ -1,0 +1,35 @@
+name: Apply Zynx and Build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Apply Zynx patch
+        run: |
+          if git apply --check zynx.patch 2>/dev/null; then
+            git apply zynx.patch
+            rm zynx.patch
+            git config user.name "zynx-bot"
+            git config user.email "zynx-bot@users.noreply.github.com"
+            git add -A
+            git commit -m "Apply Zynx changes"
+            git push
+          else
+            echo "Patch already applied or does not fit"
+          fi
+
+      - name: Start APK build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run push_ci.yml --ref "${{ github.ref_name }}"
