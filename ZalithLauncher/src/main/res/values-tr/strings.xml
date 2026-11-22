@@ -59,7 +59,7 @@
     <string name="launcher_version_debug_warning_cant_close">Bu uyarı kapatılamaz</string>
     <string name="theme_color_dynamic">Dinamik (Android 12+)</string>
     <string name="theme_color_embermire">Embermire Rengi</string>
-    <string name="theme_color_velvet_rose">Kadife Gül</string>
+    <string name="theme_color_velvet_rose">Zynx</string>
     <string name="theme_color_mistwave">Sis Dalgası</string>
     <string name="theme_color_glacier">Buzul</string>
     <string name="theme_color_verdant_field">Yeşil Ovalar Alacakaranlığı</string>
@@ -1242,4 +1242,10 @@
     <string name="guide_joystick_events_lock_text4">Tetikleme etkinliklerini düzenlemek için düğmeye dokunun</string>
     <string name="guide_joystick_events_events_text1">Tetiklenebilen etkinlikler normal düğmelerle aynıdır, özgürlük çok yüksektir</string>
     <string name="guide_joystick_events_events_text2">Sadece oyunu kontrol etmek istiyorsanız “Tuş” bölümündeki gerçek tuş atamalarını düzenlemeniz yeterlidir</string>
+    <string name="zynx_mod_hub_title">Modlar ve Modpackler</string>
+    <string name="zynx_mod_hub_subtitle">Modrinth ve CurseForge üzerinden mod ve modpack bul, indir, kur.</string>
+    <string name="zynx_hub_modpack_desc">Hazır modpackleri gez ve kur</string>
+    <string name="zynx_hub_mod_desc">Oyun sürümüne uygun mod ara</string>
+    <string name="zynx_hub_fav_desc">Kaydettiğin mod ve modpackler</string>
+    <string name="zynx_hub_id_desc">Proje ID\'si ile doğrudan aç</string>
 </resources>

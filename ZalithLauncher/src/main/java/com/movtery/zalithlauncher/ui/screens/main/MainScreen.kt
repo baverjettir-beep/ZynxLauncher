@@ -99,6 +99,7 @@ import com.movtery.zalithlauncher.ui.screens.content.LauncherScreen
 import com.movtery.zalithlauncher.ui.screens.content.LicenseScreen
 import com.movtery.zalithlauncher.ui.screens.content.LogViewScreen
 import com.movtery.zalithlauncher.ui.screens.content.MultiplayerScreen
+import com.movtery.zalithlauncher.ui.screens.content.ZynxModHubScreen
 import com.movtery.zalithlauncher.ui.screens.content.SettingsScreen
 import com.movtery.zalithlauncher.ui.screens.content.VersionExportScreen
 import com.movtery.zalithlauncher.ui.screens.content.VersionSettingsScreen
@@ -202,6 +203,12 @@ fun MainScreen(
                         screenKey = NormalNavKey.Multiplayer
                     )
                 },
+                toModHubScreen = {
+                    screenBackStackModel.mainScreen.removeAndNavigateTo(
+                        removes = screenBackStackModel.clearBeforeNavKeys,
+                        screenKey = NormalNavKey.ZynxModHub
+                    )
+                },
                 openFileManager = {
                     eventViewModel.sendEvent(
                         EventViewModel.Event.OpenFileManager(
@@ -259,12 +266,14 @@ private fun <E: TitledNavKey> TopBar(
     toSettingsScreen: () -> Unit,
     toDownloadScreen: () -> Unit,
     toMultiplayerScreen: () -> Unit,
+    toModHubScreen: () -> Unit,
     openFileManager: () -> Unit,
     changeExpandedState: () -> Unit,
 ) {
     val festivals = LocalFestivals.current
 
     val inMultiplayerScreen = mainScreenKey is NormalNavKey.Multiplayer
+    val inModHubScreen = mainScreenKey is NormalNavKey.ZynxModHub
     val inDownloadScreen = mainScreenKey is NestedNavKey.Download
     val inSettingsScreen = mainScreenKey is NestedNavKey.Settings
 
@@ -416,6 +425,15 @@ private fun <E: TitledNavKey> TopBar(
                         contentDescription = null
                     )
                 }
+
+                TopBarRailItem(
+                    selected = inModHubScreen,
+                    painter = painterResource(R.drawable.ic_extension_outlined),
+                    text = stringResource(R.string.zynx_mod_hub_title),
+                    onClick = {
+                        if (!inModHubScreen) toModHubScreen()
+                    },
+                )
 
                 TopBarRailItem(
                     selected = inMultiplayerScreen,
@@ -645,6 +663,11 @@ private fun NavigationUI(
                         addonInfoScreenKey = key.currentKey,
                         eventViewModel = eventViewModel,
                         submitError = submitError,
+                    )
+                }
+                entry<NormalNavKey.ZynxModHub> {
+                    ZynxModHubScreen(
+                        backScreenViewModel = screenBackStackModel
                     )
                 }
                 entry<NormalNavKey.Multiplayer> {

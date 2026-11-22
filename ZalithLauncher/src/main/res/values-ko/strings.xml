@@ -79,7 +79,7 @@
     <string name="launcher_version_debug_warning_cant_close">이 경고는 닫을 수 없습니다</string>
     <string name="theme_color_dynamic">다이내믹 테마 (Android 12+)</string>
     <string name="theme_color_embermire">엠버마이어</string>
-    <string name="theme_color_velvet_rose">벨벳 로즈</string>
+    <string name="theme_color_velvet_rose">Zynx</string>
     <string name="theme_color_mistwave">미스트웨이브</string>
     <string name="theme_color_glacier">글레이셔</string>
     <string name="theme_color_verdant_field">버던트 트와일라잇</string>

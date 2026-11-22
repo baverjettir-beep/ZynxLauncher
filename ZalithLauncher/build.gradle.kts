@@ -232,8 +232,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = zalithPackageName
-        applicationIdSuffix = ".v2"
+        applicationId = "com.zynx.launcher"
         minSdk = 26
         targetSdk = 34
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

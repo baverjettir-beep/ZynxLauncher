@@ -46,7 +46,7 @@
     <!-- Themes -->
     <string name="theme_color_dynamic">Динамическая (Android 12+)</string>
     <string name="theme_color_embermire">Эмбермайр</string>
-    <string name="theme_color_velvet_rose">Бархатная роза</string>
+    <string name="theme_color_velvet_rose">Zynx</string>
     <string name="theme_color_mistwave">Туманная волна</string>
     <string name="theme_color_glacier">Ледник</string>
     <string name="theme_color_verdant_field">Зелёные сумерки</string>

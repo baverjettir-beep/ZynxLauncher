@@ -79,7 +79,7 @@
     <string name="launcher_version_debug_warning_cant_close">คำเตือนนี้ไม่สามารถไม่สนใจได้</string>
     <string name="theme_color_dynamic">ไดนามิค (ต้องใช้แอนดรอยด์ 12 ขึ้นไป)</string>
     <string name="theme_color_embermire">ถ่าน</string>
-    <string name="theme_color_velvet_rose">กำมะหยี่โรส</string>
+    <string name="theme_color_velvet_rose">Zynx</string>
     <string name="theme_color_mistwave">คลื่นหมอก</string>
     <string name="theme_color_glacier">กลาเซียร์</string>
     <string name="theme_color_verdant_field">สนธยาเขียวขจี</string>

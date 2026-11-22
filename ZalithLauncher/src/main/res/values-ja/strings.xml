@@ -316,7 +316,7 @@
     <string name="date_format">yyyy \'年\' MM \'月\' dd \'日\' HH:mm:ss</string>
     <string name="theme_color_dynamic">ダイナミック (Android 12+)</string>
     <string name="theme_color_embermire">エンバーマイア</string>
-    <string name="theme_color_velvet_rose">ベルベットローズ</string>
+    <string name="theme_color_velvet_rose">Zynx</string>
     <string name="theme_color_mistwave">ミストウェーブ</string>
     <string name="theme_color_glacier">グレイシア</string>
     <string name="theme_color_verdant_field">ヴァーダントトワイライト</string>
