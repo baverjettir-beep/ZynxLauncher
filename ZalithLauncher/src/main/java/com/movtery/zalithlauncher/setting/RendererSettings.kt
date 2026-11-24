@@ -83,6 +83,11 @@ object RendererSettings : SettingsRegistry() {
     val requestMaxRefreshRate = boolSetting("requestMaxRefreshRate", true)
 
     /**
+     * Zynx FPS Boost: 取消 60 FPS 限制（关闭垂直同步与游戏内帧率上限）
+     */
+    val fpsBoost = boolSetting("fpsBoost", true)
+
+    /**
      * 使用系统的 Vulkan 驱动
      */
     val zinkPreferSystemDriver = boolSetting("zinkPreferSystemDriver", false)

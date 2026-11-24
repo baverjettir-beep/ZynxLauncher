@@ -108,6 +108,7 @@ class GameLaunchFlow(scope: CoroutineScope) {
         onComplete: () -> Unit,
         onError: (ErrorViewModel.ThrowableMessage) -> Unit,
     ) {
+        com.movtery.zalithlauncher.zynx.MusicPlayerManager.pause()
         if (taskExecutor.isRunning()) {
             //正在启动中，阻止这次启动请求
             isRunning()

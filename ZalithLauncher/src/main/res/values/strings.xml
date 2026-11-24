@@ -3097,4 +3097,11 @@
     <string name="zynx_hub_mod_desc">Search mods for your game version</string>
     <string name="zynx_hub_fav_desc">Your saved mods and modpacks</string>
     <string name="zynx_hub_id_desc">Open a project directly by its ID</string>
+    <string name="zynx_fps_boost_title">FPS Boost</string>
+    <string name="zynx_fps_boost_summary">Removes the 60 FPS cap: turns off VSync and the in-game FPS limit. May increase heat and battery use.</string>
+    <string name="zynx_music_title">Music</string>
+    <string name="zynx_music_nothing_playing">Nothing playing</string>
+    <string name="zynx_music_empty">No songs yet. Tap \"Add songs\" to pick audio files from your device.</string>
+    <string name="zynx_music_add">Add songs</string>
+    <string name="zynx_music_close">Close</string>
 </resources>

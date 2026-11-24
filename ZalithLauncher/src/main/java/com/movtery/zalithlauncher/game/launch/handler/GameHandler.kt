@@ -40,6 +40,7 @@ import com.movtery.zalithlauncher.game.sdl.SdlBridge
 import com.movtery.zalithlauncher.game.sdl.handleGamepadKeyEvent
 import com.movtery.zalithlauncher.game.version.installed.GraphicsApi
 import com.movtery.zalithlauncher.game.version.installed.utils.isLowerVer
+import com.movtery.zalithlauncher.setting.RendererSettings
 import com.movtery.zalithlauncher.setting.ControlSettings
 import com.movtery.zalithlauncher.setting.GameUiSettings
 import com.movtery.zalithlauncher.setting.enums.GamepadInputMode
@@ -111,6 +112,12 @@ class GameHandler(
                 //输入字符@ -> 64 错误的触发了F6，触发“开始/停止直播”
                 set("key_key.streamStartStop", "0")
                 set("key_key.streamPauseUnpause", "0")
+            }
+
+            if (RendererSettings.fpsBoost.getValue()) {
+                //Zynx FPS Boost: 260 为游戏内“无限制”
+                set("maxFps", "260")
+                set("enableVsync", "false")
             }
 
             set("overrideWidth", screenSize.width.toString())

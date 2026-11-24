@@ -100,6 +100,8 @@ import com.movtery.zalithlauncher.ui.screens.content.LicenseScreen
 import com.movtery.zalithlauncher.ui.screens.content.LogViewScreen
 import com.movtery.zalithlauncher.ui.screens.content.MultiplayerScreen
 import com.movtery.zalithlauncher.ui.screens.content.ZynxModHubScreen
+import com.movtery.zalithlauncher.zynx.MusicPlayerDialog
+import com.movtery.zalithlauncher.zynx.MusicPlayerManager
 import com.movtery.zalithlauncher.ui.screens.content.SettingsScreen
 import com.movtery.zalithlauncher.ui.screens.content.VersionExportScreen
 import com.movtery.zalithlauncher.ui.screens.content.VersionSettingsScreen
@@ -274,6 +276,8 @@ private fun <E: TitledNavKey> TopBar(
 
     val inMultiplayerScreen = mainScreenKey is NormalNavKey.Multiplayer
     val inModHubScreen = mainScreenKey is NormalNavKey.ZynxModHub
+    var showMusicDialog by remember { mutableStateOf(false) }
+    if (showMusicDialog) MusicPlayerDialog(onDismiss = { showMusicDialog = false })
     val inDownloadScreen = mainScreenKey is NestedNavKey.Download
     val inSettingsScreen = mainScreenKey is NestedNavKey.Settings
 
@@ -425,6 +429,13 @@ private fun <E: TitledNavKey> TopBar(
                         contentDescription = null
                     )
                 }
+
+                TopBarRailItem(
+                    selected = MusicPlayerManager.isPlaying,
+                    painter = painterResource(R.drawable.ic_audio_file_filled),
+                    text = stringResource(R.string.zynx_music_title),
+                    onClick = { showMusicDialog = true },
+                )
 
                 TopBarRailItem(
                     selected = inModHubScreen,

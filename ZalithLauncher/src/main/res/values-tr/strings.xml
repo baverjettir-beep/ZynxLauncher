@@ -1248,4 +1248,11 @@
     <string name="zynx_hub_mod_desc">Oyun sürümüne uygun mod ara</string>
     <string name="zynx_hub_fav_desc">Kaydettiğin mod ve modpackler</string>
     <string name="zynx_hub_id_desc">Proje ID\'si ile doğrudan aç</string>
+    <string name="zynx_fps_boost_title">FPS Boost</string>
+    <string name="zynx_fps_boost_summary">60 FPS sınırını kaldırır: VSync\'i ve oyun içi FPS limitini kapatır. Isınmayı ve pil kullanımını artırabilir.</string>
+    <string name="zynx_music_title">Müzik</string>
+    <string name="zynx_music_nothing_playing">Çalan bir şey yok</string>
+    <string name="zynx_music_empty">Henüz şarkı yok. Telefondan ses dosyası seçmek için \"Şarkı ekle\"ye bas.</string>
+    <string name="zynx_music_add">Şarkı ekle</string>
+    <string name="zynx_music_close">Kapat</string>
 </resources>
