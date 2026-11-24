@@ -7,7 +7,12 @@ package com.movtery.zalithlauncher.ui.screens.content
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -63,6 +68,40 @@ fun ZynxModHubScreen(
             val go: (TitledNavKey) -> Unit = { target ->
                 backScreenViewModel.navigateToDownload(target)
             }
+            val openLibrary: (Int) -> Unit = { kind ->
+                backScreenViewModel.mainScreen.navigateTo(NormalNavKey.ZynxLibrary(kind))
+            }
+
+            HubCard(
+                icon = R.drawable.ic_package_2_outlined,
+                title = R.string.zl_title_pack,
+                desc = R.string.zl_hub_pack_desc,
+                onClick = { openLibrary(3) }
+            )
+            HubCard(
+                icon = R.drawable.ic_extension_outlined,
+                title = R.string.zl_title_mods,
+                desc = R.string.zl_hub_mods_desc,
+                onClick = { openLibrary(0) }
+            )
+            HubCard(
+                icon = R.drawable.ic_image_outlined,
+                title = R.string.zl_title_rp,
+                desc = R.string.zl_hub_rp_desc,
+                onClick = { openLibrary(1) }
+            )
+            HubCard(
+                icon = R.drawable.ic_image_filled,
+                title = R.string.zl_title_shaders,
+                desc = R.string.zl_hub_shaders_desc,
+                onClick = { openLibrary(2) }
+            )
+
+            Text(
+                text = stringResource(R.string.zl_hub_more),
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.primary
+            )
 
             HubCard(
                 icon = R.drawable.ic_package_2_outlined,
@@ -102,14 +141,22 @@ private fun HubCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .clip(RoundedCornerShape(20.dp))
             .clickable(onClick = onClick),
+        shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+            containerColor = Color.Transparent,
+            contentColor = Color.White
         )
     ) {
         Row(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier
+                .background(
+                    Brush.horizontalGradient(
+                        listOf(Color(0xFF3B0A78), Color(0xFF7B2FF7), Color(0xFFC13BFF))
+                    )
+                )
+                .padding(18.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {

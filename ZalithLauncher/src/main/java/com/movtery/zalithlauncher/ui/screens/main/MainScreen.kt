@@ -99,6 +99,7 @@ import com.movtery.zalithlauncher.ui.screens.content.LauncherScreen
 import com.movtery.zalithlauncher.ui.screens.content.LicenseScreen
 import com.movtery.zalithlauncher.ui.screens.content.LogViewScreen
 import com.movtery.zalithlauncher.ui.screens.content.MultiplayerScreen
+import com.movtery.zalithlauncher.ui.screens.content.ZynxLibraryScreen
 import com.movtery.zalithlauncher.ui.screens.content.ZynxModHubScreen
 import com.movtery.zalithlauncher.zynx.MusicPlayerDialog
 import com.movtery.zalithlauncher.zynx.MusicPlayerManager
@@ -275,7 +276,7 @@ private fun <E: TitledNavKey> TopBar(
     val festivals = LocalFestivals.current
 
     val inMultiplayerScreen = mainScreenKey is NormalNavKey.Multiplayer
-    val inModHubScreen = mainScreenKey is NormalNavKey.ZynxModHub
+    val inModHubScreen = mainScreenKey is NormalNavKey.ZynxModHub || mainScreenKey is NormalNavKey.ZynxLibrary
     var showMusicDialog by remember { mutableStateOf(false) }
     if (showMusicDialog) MusicPlayerDialog(onDismiss = { showMusicDialog = false })
     val inDownloadScreen = mainScreenKey is NestedNavKey.Download
@@ -355,12 +356,7 @@ private fun <E: TitledNavKey> TopBar(
 
                 if (parent == null) {
                     if (festivals.isEmpty()) {
-                        Text(
-                            text = BuildKeys.LAUNCHER_IDENTIFIER,
-                            style = style,
-                            softWrap = softWarp,
-                            maxLines = maxLines
-                        )
+                        Spacer(modifier = Modifier.width(1.dp))
                     } else {
                         FestivalTitleText(
                             festivals = festivals,
@@ -674,6 +670,12 @@ private fun NavigationUI(
                         addonInfoScreenKey = key.currentKey,
                         eventViewModel = eventViewModel,
                         submitError = submitError,
+                    )
+                }
+                entry<NormalNavKey.ZynxLibrary> { key ->
+                    ZynxLibraryScreen(
+                        key = key,
+                        backScreenViewModel = screenBackStackModel
                     )
                 }
                 entry<NormalNavKey.ZynxModHub> {

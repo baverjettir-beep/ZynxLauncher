@@ -59,6 +59,10 @@ sealed interface NormalNavKey : TitledNavKey {
     ) : NormalNavKey {
         @Contextual override val title: AndroidStringText = androidText(R.string.page_title_select_files)
     }
+    /** Zynx library: 0 = mods, 1 = resource packs, 2 = shaders, 3 = ZynxModPack */
+    @Serializable data class ZynxLibrary(val kind: Int) : NormalNavKey {
+        @Contextual override val title: AndroidStringText = androidText(R.string.zynx_mod_hub_title)
+    }
     /** Zynx 模组/整合包中心屏幕 */
     @Serializable data object ZynxModHub : NormalNavKey {
         @Contextual override val title: AndroidStringText = androidText(R.string.zynx_mod_hub_title)

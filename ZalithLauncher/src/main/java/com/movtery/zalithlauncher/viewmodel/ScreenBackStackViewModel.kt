@@ -53,6 +53,7 @@ class ScreenBackStackViewModel : ViewModel() {
         settingsScreen::class,
         downloadScreen::class,
         NormalNavKey.Multiplayer::class,
-        NormalNavKey.ZynxModHub::class
+        NormalNavKey.ZynxModHub::class,
+        NormalNavKey.ZynxLibrary::class
     )
 }
